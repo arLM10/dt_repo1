@@ -36,22 +36,26 @@ class User ( db . Model ):
 # --------------------------
 # TASK MODEL
 # --------------------------
-class Task ( db . Model ):
-# Table name
+class Task(db.Model):
     __tablename__ = 'tasks'
-# Columns
-    id = db . Column ( db . Integer , primary_key = True )
-    title = db . Column ( db . String (100) , nullable = False )
-    description = db . Column ( db . Text )
-    completed = db . Column ( db . Boolean , default = False )
-    created_at = db . Column ( db . DateTime , default = datetime . utcnow() )
-    def to_dict ( self ):
+
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100), nullable=False)
+    description = db.Column(db.Text)
+    completed = db.Column(db.Boolean, default=False)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+
+    # FOREIGN KEY
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+
+    def to_dict(self):
         return {
-            'id': self .id ,
-            'title': self . title ,
-            'description ': self . description ,
-            'completed ': self . completed ,
-            'created_at ': self . created_at . isoformat ()
+            "id": self.id,
+            "title": self.title,
+            "description": self.description,
+            "completed": self.completed,
+            "created_at": self.created_at.isoformat() if self.created_at else None,
+            "user_id": self.user_id
         }
 
 # --------------------------
