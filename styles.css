@@ -1,0 +1,127 @@
+/* styles.css */
+/* Base Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: lightgreen; /* Light grey background */
+    color: #333; /* Default text color */
+    transition: background-color 0.3s, color 0.3s; /* Smooth theme transition */
+}
+
+h1 {
+    color: #2c3e50; /* Dark blue heading */
+    text-align: center;
+    border-bottom: 3px solid #3498db; /* Blue underline */
+    padding-bottom: 10px;
+}
+
+h2 {
+    color: #34495e; /* Slightly lighter dark blue */
+    margin-top: 30px;
+}
+
+/* Tagline below H1 */
+.tagline {
+    text-align: center;
+    font-style: italic;
+    color:  #2c3e50;
+}
+
+/* List Styling */
+ul {
+    list-style-type: none; /* Remove default bullet points */
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+ul li {
+    padding: 5px 0;
+    border-bottom: 1px dotted #ecf0f1;
+}
+
+/* Form Styling */
+#contact-form {
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 95%; /* Adjusted for padding */
+    padding: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensures padding doesn't increase total width */
+}
+
+.submit-btn, .action-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover, .action-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Default styles for desktop (Flexbox is applied to the container) */
+.container {
+    display: flex;
+    flex-direction: column; /* Stacks sections vertically */
+}
+
+/* --- Media Queries for Responsiveness --- */
+
+/* Tablet styles (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Main container is already column, but can adjust padding */
+    .container {
+        padding: 0 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
+
+/* Mobile styles (max-width: 480px) */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    /* Stack buttons on mobile */
+    .action-btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
